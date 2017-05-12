@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\Engine\Light\Light.cpp">
+      <Filter>Source\Engine\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Light\GBuf.cpp">
+      <Filter>Source\Engine\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Models\Model.cpp">
+      <Filter>Source\Engine\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\World\World.cpp">
+      <Filter>Source\Engine\World</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Shader\ULight.cpp">
+      <Filter>Source\Engine\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Level\Level.cpp">
+      <Filter>Source\Engine\Level</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Scene\Package.cpp">
+      <Filter>Source\Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Scene\Scene.cpp">
+      <Filter>Source\Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game\Rendering\RenderCache.cpp">
+      <Filter>Source\Game\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game\Controller.cpp">
+      <Filter>Source\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game\GameManager.cpp">
+      <Filter>Source\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game\Main.cpp">
+      <Filter>Source\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game\App.cpp">
+      <Filter>Source\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Core\Common.cpp">
+      <Filter>Source\Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Core\Mesh.cpp">
+      <Filter>Source\Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Core\ScreenRect.cpp">
+      <Filter>Source\Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Core\Serial.cpp">
+      <Filter>Source\Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Core\Texture.cpp">
+      <Filter>Source\Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Core\Transformable.cpp">
+      <Filter>Source\Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Core\Camera.cpp">
+      <Filter>Source\Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\World\Actor.cpp">
+      <Filter>Source\Engine\World</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game\Rendering\RenderTech.cpp">
+      <Filter>Source\Game\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game\Rendering\RenderPass.cpp">
+      <Filter>Source\Game\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Core\SceneObject.cpp">
+      <Filter>Source\Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Scene\Import.cpp">
+      <Filter>Source\Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game\Resource.cpp">
+      <Filter>Source\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Engine\Scene\ImportImpl.cpp">
+      <Filter>Source\Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Lib\JuceLibraryCode\include_juce_core.cpp">
+      <Filter>Juce</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Lib\JuceLibraryCode\include_juce_cryptography.cpp">
+      <Filter>Juce</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Lib\JuceLibraryCode\include_juce_data_structures.cpp">
+      <Filter>Juce</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Lib\JuceLibraryCode\include_juce_events.cpp">
+      <Filter>Juce</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Lib\JuceLibraryCode\include_juce_graphics.cpp">
+      <Filter>Juce</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Lib\JuceLibraryCode\include_juce_gui_basics.cpp">
+      <Filter>Juce</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Lib\JuceLibraryCode\include_juce_gui_extra.cpp">
+      <Filter>Juce</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Lib\JuceLibraryCode\include_juce_opengl.cpp">
+      <Filter>Juce</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Lib\JuceLibraryCode\include_juce_video.cpp">
+      <Filter>Juce</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Game\Example\Example.cpp">
+      <Filter>Source\Game\Example</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Juce">
+      <UniqueIdentifier>{aa5376b7-477a-419f-8b01-51f0512a34a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{f4942fef-964c-4237-9dfd-1b2cc84575f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine">
+      <UniqueIdentifier>{02f24e38-b640-4d55-b006-bfb46981fcb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine\Core">
+      <UniqueIdentifier>{2c77a5d9-5295-4b0e-acc9-5aaaab0c7a35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine\Light">
+      <UniqueIdentifier>{a6eea556-ddff-41a7-9e47-953dca2b68f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine\Models">
+      <UniqueIdentifier>{ec934c29-e709-49b9-8875-953f20752321}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine\World">
+      <UniqueIdentifier>{7fa42b24-af19-4bed-98ec-873f46f07485}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine\Shader">
+      <UniqueIdentifier>{abc882f3-cb66-4ba5-9eb4-cc02e827ec4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine\Level">
+      <UniqueIdentifier>{9c83094e-00cc-4dfd-a468-98da0c47897c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine\Scene">
+      <UniqueIdentifier>{4c5dc031-4f5e-4430-94e8-7eeb559ae04f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Game">
+      <UniqueIdentifier>{663b3c3a-8c18-44df-a4a3-7931af252741}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Game\Rendering">
+      <UniqueIdentifier>{5395caac-65cd-4a17-97a0-8aae699e29df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Game\Example">
+      <UniqueIdentifier>{98cdf394-f5fd-47a4-a684-46af5d9710fe}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include=".\resources.rc">
+      <Filter>Juce</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\Engine\Engine.h">
+      <Filter>Source\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Light\GBuf.h">
+      <Filter>Source\Engine\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Light\Light.h">
+      <Filter>Source\Engine\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Models\Model.h">
+      <Filter>Source\Engine\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\World\World.h">
+      <Filter>Source\Engine\World</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Shader\Attribute.h">
+      <Filter>Source\Engine\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Shader\Uniform.h">
+      <Filter>Source\Engine\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Shader\ULight.h">
+      <Filter>Source\Engine\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Level\Level.h">
+      <Filter>Source\Engine\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Scene\Scene.h">
+      <Filter>Source\Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Scene\Package.h">
+      <Filter>Source\Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Game\Rendering\RenderCache.h">
+      <Filter>Source\Game\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Game\App.h">
+      <Filter>Source\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Game\Controller.h">
+      <Filter>Source\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Game\GameManager.h">
+      <Filter>Source\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Game\Viewer.h">
+      <Filter>Source\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Core\Common.h">
+      <Filter>Source\Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Core\Core.h">
+      <Filter>Source\Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Core\Math.h">
+      <Filter>Source\Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Core\Mesh.h">
+      <Filter>Source\Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Core\SceneObject.h">
+      <Filter>Source\Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Core\ScreenRect.h">
+      <Filter>Source\Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Core\Serial.h">
+      <Filter>Source\Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Core\Texture.h">
+      <Filter>Source\Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Core\Transformable.h">
+      <Filter>Source\Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Core\Types.h">
+      <Filter>Source\Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Core\Vector.h">
+      <Filter>Source\Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Core\Buffer.h">
+      <Filter>Source\Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Core\Camera.h">
+      <Filter>Source\Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Core\Config.h">
+      <Filter>Source\Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\World\Actor.h">
+      <Filter>Source\Engine\World</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Game\Rendering\RenderTech.h">
+      <Filter>Source\Game\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Shader\Shader.h">
+      <Filter>Source\Engine\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Game\Rendering\RenderPass.h">
+      <Filter>Source\Game\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Scene\Import.h">
+      <Filter>Source\Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Game\Resource.h">
+      <Filter>Source\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Scene\ImportImpl.h">
+      <Filter>Source\Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Engine\Scene\Asset.h">
+      <Filter>Source\Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Game\Example\Example.h">
+      <Filter>Source\Game\Example</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
