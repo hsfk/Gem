@@ -32,6 +32,18 @@ DirLight::DirLight(const DirLight& d)
 {
 }
 
+void DirLight::save(Ostream& out) const
+{
+        SceneNode::save(out);
+        out < static_cast<const LightBase&>(*this) < dir;
+}
+
+void DirLight::load(Istream& in)
+{
+        SceneNode::load(in);
+        in > static_cast<LightBase&>(*this) > dir;
+}
+
 PointLight::PointLight(const Point3D& pos)
         : Placement(pos)
 {

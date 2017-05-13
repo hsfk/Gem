@@ -38,11 +38,13 @@ Point3D Placement::getPos() const
 
 void Placement::save(Ostream& out) const
 {
+        SceneNode::save(out);
         out < pos;
 }
 
 void Placement::load(Istream& in)
 {
+        SceneNode::load(in);
         in > pos;
 }
 

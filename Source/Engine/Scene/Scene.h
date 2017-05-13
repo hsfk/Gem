@@ -12,6 +12,7 @@ class Scene : public Serial
 public:
         Scene();
         Scene(const Package& pack);
+        void clear();
 
         Package&             getPackage();
         SceneObject&         getObject(Index i);

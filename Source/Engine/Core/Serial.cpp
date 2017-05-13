@@ -4,17 +4,13 @@ SerialTypeInfo::ConstructorMap SerialTypeInfo::ctors;
 
 Istream& Istream::operator>>(void** serial)
 {
-        TypeID id;
-        *this > id;
-        *serial = SerialTypeInfo::getConstructor(id)(*this);
+        *serial = SerialTypeInfo::getConstructor(read<TypeID>())(*this);
         return *this;
 }
 
 Istream& Istream::operator>>(Serial& serial)
 {
-        TypeID id;
-        *this > id;
-
+        read<TypeID>();
         serial.load(*this);
         return *this;
 }
@@ -28,24 +24,16 @@ Istream& Istream::operator>>(Image& image)
         image = Image(format, width, height, false);
         for (int y = 0; y < height; y++)
                 for (int x = 0; x < width; x++)
-                {
-                        Colour col;
-                        *this > col;
-                        image.setPixelAt(x, y, col);
-                }
+                        image.setPixelAt(x, y, read<Colour>());
+
         return *this;
 }
 
 Istream& Istream::operator>>(String& string)
 {
-        int length;
-        *this > length;
+        int length = read<int>();
         for (int i = 0; i < length; i++)
-        {
-                juce_wchar w;
-                *this > w;
-                string += w;
-        }
+                string += read<juce_wchar>();
         return *this;
 }
 
@@ -120,7 +108,7 @@ void SerialTypeInfo::clear()
         ctors.clear();
 }
 
-void Serial::save(const String& path) const
+void Serial::saveToFile(const String& path) const
 {
         File f = File::getCurrentWorkingDirectory().getChildFile(path);
         if (f.exists())
@@ -130,7 +118,7 @@ void Serial::save(const String& path) const
         save(out);
 }
 
-void Serial::load(const String& path)
+void Serial::loadFromFile(const String& path)
 {
         File f = File::getCurrentWorkingDirectory().getChildFile(path);
         jassert(f.exists());

@@ -24,7 +24,7 @@ struct Mesh : public Serial
 
         static Mesh fromRectangle(Point3D p1, Point3D p2, Point3D p3, Point3D p4, Vec3D norm);
 
-        virtual void save(Ostream& out) const override {}
-        virtual void load(Istream& in) override {}
+        virtual void save(Ostream& out) const override;
+        virtual void load(Istream& in) override;
         DECLARE_SERIAL(Mesh)
 };

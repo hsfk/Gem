@@ -92,6 +92,14 @@ public:
                 return *this;
         }
 
+        template<typename T>
+        inline T read()
+        {
+                T val;
+                load(&val, sizeof(T));
+                return val;
+        }
+
         Istream& operator>>(void** serial);
         Istream& operator>>(Serial& serial);
         Istream& operator>>(Image& image);
@@ -151,8 +159,8 @@ struct Serial
         virtual void load(Istream& in) = 0;
         virtual TypeInfo typeInfo() const = 0;
 
-        void save(const String& path) const;
-        void load(const String& path);
+        void saveToFile(const String& path) const;
+        void loadFromFile(const String& path);
 };
 
 #define DECLARE_SERIAL(TYPE) \

@@ -54,11 +54,11 @@ void SceneNode::setClean() const
 void SceneNode::save(Ostream& out) const
 {
         SceneObject::save(out);
-        out < binding;
+        out < location < binding;
 }
 
 void SceneNode::load(Istream& in)
 {
         SceneObject::load(in);
-        in > binding;
+        in > location > binding;
 }

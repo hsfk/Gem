@@ -25,6 +25,20 @@ Package::Package(const Package& pack)
         this->materials  = pack.materials;
 }
 
+void Package::clear()
+{
+        ScopedLock sl(changeLock);
+        for (size_t i = 0; i < textures.size(); i++)
+                delete textures[i];
+
+        textures.clear();
+        materials.clear();
+
+        meshes.clear();
+        shaderData.clear();
+        index.clear();
+}
+
 Texture& Package::getTexture(Index i)
 {
         return *textures[i];
@@ -115,17 +129,67 @@ void Package::addAlias(uint64_t id, Index idx)
 
 Index Package::getAlias(uint64_t id) const
 {
-        std::map<uint64_t, Index>::const_iterator it = index.find(id);
+        PackageIndex::const_iterator it = index.find(id);
         jassert(it != index.cend());
         return it->second;
 }
 
 void Package::save(Ostream& out) const
 {
-        jassertfalse;
+        ScopedLock sl(changeLock);
+
+        out < textures.size();
+        for (size_t i = 0; i < textures.size(); i++)
+                out << *textures[i];
+
+        out < meshes.size();
+        for (size_t i = 0; i < meshes.size(); i++)
+                out << meshes[i];
+
+        out < shaderData.size();
+        for (size_t i = 0; i < shaderData.size(); i++)
+                out << shaderData[i].fragment << shaderData[i].vertex;
+
+        out << materials;
+
+        out < index.size();
+        for (PackageIndex::const_iterator it = index.cbegin(); it != index.cend(); it++)
+                out < it->first < it->second;
 }
 
 void Package::load(Istream& in)
 {
-        jassertfalse;
+        ScopedLock sl(changeLock);
+        size_t size;
+
+        in > size;
+        for (size_t i = 0; i < size; i++)
+        {
+                Texture* tex;
+                in >> (void**)&tex;
+                loadTexture(tex);
+        }
+
+        in > size;
+        for (size_t i = 0; i < size; i++)
+        {
+                Mesh m;
+                in >> m;
+                loadMesh(m);
+        }
+
+        shaderData.resize(in.read<size_t>());
+        for (size_t i = 0; i < shaderData.size(); i++)
+                in >> shaderData[i].fragment >> shaderData[i].vertex;
+
+        in >> materials;
+
+        size = in.read<size_t>();
+        for (size_t i = 0; i < size; i++)
+        {
+                uint64_t key = in.read<uint64_t>();
+                Index    id  = in.read<Index>();
+                index.insert(std::make_pair(key, id));
+        }
+                
 }

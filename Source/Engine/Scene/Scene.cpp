@@ -11,6 +11,22 @@ Scene::Scene(const Package& pack)
 {
 }
 
+void Scene::clear()
+{
+        ScopedLock sl(changeLock);
+
+        pack.clear();
+        for (size_t i = 0; i < objects.size(); i++)
+                delete objects[i];
+
+        objects.clear();
+        nodes.clear();
+        models.clear();
+        pointLights.clear();
+        dirLights.clear();
+        spotLights.clear();
+}
+
 Package& Scene::getPackage()
 {
         return pack;
@@ -113,12 +129,26 @@ void Scene::unlock()
 
 void Scene::save(Ostream& out) const
 {
-        jassertfalse;
+        ScopedLock sl(changeLock);
+        pack.save(out);
+
+        out < objects.size();
+        for (size_t i = 0; i < objects.size(); i++)
+                out << *objects[i];
+
+        out << nodes << models << pointLights << dirLights << spotLights < ambientLight;
 }
 
 void Scene::load(Istream& in)
 {
-        jassertfalse;
+        ScopedLock sl(changeLock);
+        pack.load(in);
+
+        objects.resize(in.read<size_t>());
+        for (size_t i = 0; i < objects.size(); i++)
+                in >> (void**)&objects[i];
+
+        in >> nodes >> models >> pointLights >> dirLights >> spotLights > ambientLight;
 }
 
 Index Scene::loadObject(SceneObject* obj)

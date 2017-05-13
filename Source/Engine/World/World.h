@@ -18,24 +18,29 @@ public:
         {
                 return aeaReset;
         }
+
+        virtual void save(Ostream& out) const override;
+        virtual void load(Istream& in) override;
+        DECLARE_SERIAL(Entity)
 };
 
 class World : public Serial
 {
 public:
-        World(Scene& scene);
-        void invalidate();
-        void loadEntity(Entity* e);
+        World();
+        void clear();
+        void invalidate(Scene& scene);
+        void loadEntity(Entity* e, Scene& scene);
 
         uint64_t counter;
 
-        DECLARE_SERIAL(World)
+
         virtual void save(Ostream& out) const override;
         virtual void load(Istream& in) override;
+        DECLARE_SERIAL(World)
 
 protected:
         typedef std::list<Index> EntityList;
 
-        Scene&        scene;
         EntityList entities;
 };

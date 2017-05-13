@@ -50,3 +50,13 @@ Mesh Mesh::fromRectangle(Point3D p1, Point3D p2, Point3D p3, Point3D p4, Vec3D n
         Normals n({ norm, norm, norm, norm });
         return Mesh(v, i, n);
 }
+
+void Mesh::save(Ostream& out) const
+{
+        out << vertices << normals << texCoords << indices < material;
+}
+
+void Mesh::load(Istream& in)
+{
+        in >> vertices >> normals >> texCoords >> indices > material;
+}

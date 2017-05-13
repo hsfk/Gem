@@ -6,19 +6,21 @@ class Level : public Serial
 {
 public:
         Level();
+        void         clear();
         virtual void initialize();
         void         invalidate();
         void         render();
 
-        Actor* getPlayer();
+        Actor& getPlayer();
+        void   setPlayer(Actor* player);
 
-        DECLARE_SERIAL(Level)
         virtual void save(Ostream& out) const override;
         virtual void load(Istream& in) override;
+        DECLARE_SERIAL(Level)
 
 protected:
         Scene     scene;
         World     world;
         Renderer* renderer;
-        Actor*    player;
+        Index     player;
 };

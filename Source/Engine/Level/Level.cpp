@@ -1,8 +1,17 @@
 #include "Level.h"
 
 Level::Level()
-        : world(scene), player(nullptr)
+        : player(-1), renderer(nullptr)
 {
+}
+
+void Level::clear()
+{
+        scene.clear();
+        world.clear();
+
+        delete renderer;
+        renderer = nullptr;
 }
 
 void Level::initialize()
@@ -11,27 +20,33 @@ void Level::initialize()
 
 void Level::invalidate()
 {
-        world.invalidate();
+        world.invalidate(scene);
 }
 
 void Level::render()
 {
         jassert(renderer);
-        renderer->render(scene, player->cam);
+        renderer->render(scene, getPlayer().cam);
 }
 
-Actor* Level::getPlayer()
+Actor& Level::getPlayer()
 {
-        jassert(player);
-        return player;
+        jassert(player != -1);
+        return reinterpret_cast<Actor&>(scene.getNode(player));
+}
+
+void Level::setPlayer(Actor* player)
+{
+        this->player = scene.loadNode(player);
 }
 
 void Level::save(Ostream& out) const
 {
-        out << scene << world << static_cast<const Serial&>(static_cast<Transformable&>(*player));
+        out << scene << world << *renderer < player;
 }
 
 void Level::load(Istream& in)
 {
-        in >> scene >> world >> (void**)&player;
+        clear();
+        in >> scene >> world >> (void**)&renderer > player;
 }

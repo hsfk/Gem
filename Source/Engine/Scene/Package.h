@@ -11,16 +11,17 @@ class Package : public Serial
 public:
         Package();
         Package(const Package& pack);
+        void clear();
 
-        Texture&       getTexture(Index i);
-        Mesh&          getMesh(Index i);
-        ShaderData&    getShaderData(Index i);
-        Material&      getMaterial(Index i);
+        Texture&          getTexture(Index i);
+        Mesh&             getMesh(Index i);
+        ShaderData&       getShaderData(Index i);
+        Material&         getMaterial(Index i);
 
-        const Texture&       getTexture(Index i) const;
-        const Mesh&          getMesh(Index i) const;
-        const ShaderData&    getShaderData(Index i) const;
-        const Material&      getMaterial(Index i) const;
+        const Texture&    getTexture(Index i) const;
+        const Mesh&       getMesh(Index i) const;
+        const ShaderData& getShaderData(Index i) const;
+        const Material&   getMaterial(Index i) const;
 
         Index loadTexture(Texture* tex);
         Index loadMesh(Mesh mesh);
@@ -39,10 +40,11 @@ public:
 
 protected:
         CriticalSection    changeLock;
-        Vector<Texture*>      textures;
-        Vector<Mesh>          meshes;
-        Vector<ShaderData>    shaderData;
-        Vector<Material>      materials;
+        Vector<Texture*>   textures;
+        Vector<Mesh>       meshes;
+        Vector<ShaderData> shaderData;
+        Vector<Material>   materials;
 
-        std::map<uint64_t, Index> index;
+        typedef std::map<uint64_t, Index> PackageIndex;
+        PackageIndex index;
 };

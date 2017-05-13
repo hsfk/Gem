@@ -25,6 +25,10 @@ public:
         DirLight(const DirLight& d);
 
         Vec3D dir;
+
+        virtual void save(Ostream& out) const override;
+        virtual void load(Istream& in) override;
+        DECLARE_SERIAL(DirLight)
 };
 
 struct PointLight : Placement, LightBase
